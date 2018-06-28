@@ -136,13 +136,17 @@ function updateGraph(income=0){
 
 /** TOOL TIP */
 
-function tooltipMouseOver(d, target){
+function tooltipMouseOver(d){
+
+	seconds = 60*(d.value - Math.floor(d.value))
+
+	time = d3.format(".0f")(d.value) + ":" + d3.format(".0f")(seconds) 
 
 	tooltip.transition()
                 .duration(200)
                 .style("opacity", .95)
                 .attr("id", d.class);
-    tooltip.html("<strong class='tooltip-title'>" + d.key + '</strong></br> ' + d3.format(".1f")(d.value) + ' minutes')
+    tooltip.html("<strong class='tooltip-title'>One standard every:</strong></br> " + time + ' min')
                 
 }
 
