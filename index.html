@@ -5,14 +5,19 @@
         <title>Alcohol Consumption</title>
         <script src="https://d3js.org/d3.v4.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="style/hpa_default.css">
-        <link rel="stylesheet" href="style/bar_graph.css">
+        <link rel="stylesheet" href="css/display.css">
+        <link rel="stylesheet" href="css/hpa_default.css">
+        <link rel="stylesheet" href="css/bar_graph.css">
     </head>
   
   <body>
 
-
+    <div class="header">
+        <div class="header-links">
+            <a class="header-button current-page" href="index.html">Alcohol</a>
+            <a class="header-button" href="mental_bars.html">Mental Health</a>
+        </div>
+    </div>
 
    <!--<div class="visualisation">
         <div class="vis-title">Ever smoked a cigarette? (Year 10 Snapshot)</div>
@@ -26,7 +31,7 @@
     <div class="visualisation">
 
         <h3>Minutes of work per standard drink</h3>
-        <script src="bar-graph.js"></script>
+        <script src="js/bar-graph.js"></script>
         <div class='control'>
 
             <input type='text' class='income' id='enter-listener' onfocus="this.value=''" placeholder="Enter your hourly rate...">

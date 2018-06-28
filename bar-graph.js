@@ -33,11 +33,10 @@ function transformData(data){
 		d.values.whisky		= +d.values.whisky;
 		d.values.wine 		= +d.values.wine;
 		d.values.cider 		= +d.values.cider;
-	});
-	
+	});	
 }
 
-d3.json('data.json', function(err, json){
+d3.json('data/standard_drink_data.json', function(err, json){
 		if (err) throw err;
 
 		data = json.data;
@@ -59,8 +58,6 @@ d3.json('data.json', function(err, json){
 
 
 function updateGraph(income=0){
-
-	console.log(income);
 
 	data[1].median = income;
 
