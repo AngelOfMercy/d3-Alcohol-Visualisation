@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Alcohol Consumption</title>
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style/hpa_default.css">
+        <link rel="stylesheet" href="style/bar_graph.css">
+    </head>
+  
+  <body>
+
+
+
+   <!--<div class="visualisation">
+        <div class="vis-title">Ever smoked a cigarette? (Year 10 Snapshot)</div>
+        <div class="options" >
+            <div id="freqDropdown"></div>
+            <div class="genderLabels"></div>
+        </div>
+        <div id="graph"></div>
+        <script src="script.js"></script>
+    </div>-->
+    <div class="visualisation">
+
+        <h3>Minutes of work per standard drink</h3>
+        <script src="bar-graph.js"></script>
+        <div class='control'>
+
+            <input type='text' class='income' id='enter-listener' onfocus="this.value=''" placeholder="Enter your hourly rate...">
+            <script>
+                var input = document.getElementById("enter-listener");
+                console.log(input);
+
+                input.addEventListener("keyup", function(event){
+                    if(event.keyCode === 13){
+                        updateGraph(d3.select('input.income').property('value'));
+                    }
+                });
+            </script>
+            <div type="submit" class="visualisation-button" onclick="updateGraph(d3.select('input.income').property('value'))">Submit</div>
+        </div>
+    </div>
+    
+  </body>
+  
+</html>

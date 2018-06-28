@@ -1,0 +1,21 @@
+
+.visualisation{
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 3px;
+	top: 50%;
+  	left: 50%;
+  	margin: -270px 0 0 -300px;
+  	position: absolute;
+}
+
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	fill:#282828;
+	letter-spacing: 2px;
+	text-transform: capitalize;
+	padding-bottom: -10px;
+}
+
+body{
+	background-color: #282828;
+}
