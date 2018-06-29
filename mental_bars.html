@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Mental Bar Graph</title>
         <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/mental_bar_style.css">
         <link rel="stylesheet" href="css/hpa_default.css">
         <link rel="stylesheet" href="css/display.css">
@@ -27,20 +28,20 @@
         <div id="graph"></div>
         <script src="script.js"></script>
     </div>-->
-    <div class="visualisation">
-    	<div class="controlpanel">
-    		<div class="dropdown">
-			  <button class="dropbtn">Anxiety</button>
-			  <div class="dropdown-content">
-			    <a href="#" onclick="updateGraph('Anxiety')">Anxiety</a>
-			    <a href="#" onclick="updateGraph('Depression')">Depression</a>
-			    <a href="#" onclick="updateGraph('Psychological Distress')">Psychological Distress</a>
-			  </div>
-			</div>
-    	</div>
-    	<svg width="480" height="500">
-
-    	</svg>
+    <div class="content">
+        <div class="visualisation">
+        	<div class="controlpanel">
+        		<div class="dropdown">
+    			  <button class="dropbtn">Anxiety</button>
+    			  <div class="dropdown-content">
+    			    <a href="#" onclick="updateGraph('Anxiety')">Anxiety</a>
+    			    <a href="#" onclick="updateGraph('Depression')">Depression</a>
+    			    <a href="#" onclick="updateGraph('Psychological Distress')">Psychological Distress</a>
+    			  </div>
+    			</div>
+        	</div>
+            <svg></svg>
+        </div>
     </div>
     <script src="js/script.js"></script>
   </body>
