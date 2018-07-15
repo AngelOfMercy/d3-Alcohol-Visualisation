@@ -10,7 +10,7 @@ div.tooltip {
 }
 
 .tooltip-title{
-	text-transform: capitalize;
+	
 }
 
 .visualisation{
@@ -59,4 +59,8 @@ input{
 
 rect:hover {
 	opacity: 0.8;
+}
+
+a.source {
+	font-size: 70%
 }

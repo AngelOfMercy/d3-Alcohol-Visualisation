@@ -27,13 +27,25 @@ var barContainer = svg.append('g');
 var data = null;
 
 function transformData(data){
+	console.log(data);
+	temp = []
+
+
+
 	data.forEach(function(d){
+
 		d.values.beer 		= +d.values.beer;
-		d.values.rtd 		= +d.values.rtd; //Beer on licenced.
+		d.values["RTD"] 	= +d.values.rtd; //Beer on licenced.
 		d.values.whisky		= +d.values.whisky;
-		d.values.wine 		= +d.values.wine;
+		d.values["Cask Wine"]= +d.values.wine;
 		d.values.cider 		= +d.values.cider;
+
+		delete d.values.rtd
+		delete d.values.wine
+
+
 	});	
+
 }
 
 d3.json('data/standard_drink_data.json', function(err, json){
@@ -44,6 +56,9 @@ d3.json('data/standard_drink_data.json', function(err, json){
 		transformData(data);
 
 		keys = Object.keys(data[0].values);
+
+		console.log("keys")
+		console.log(keys);
 
 		x0.domain(keys);
 
@@ -111,7 +126,7 @@ function updateGraph(income=0){
       .merge(bars)
       .transition()
       .attr('width', x1.bandwidth())
-      .attr('x', function (d) { return x0(d.key) })
+      .attr('x', function (d) { ; return x0(d.key) })
       .attr('y', d => y(d.value))
       .attr('height', d => height - y(d.value))
       .attr('class', function(d){return d.class;})
@@ -134,8 +149,9 @@ function updateGraph(income=0){
 /** TOOL TIP */
 
 function tooltipMouseOver(d){
-
 	seconds = 60*(d.value - Math.floor(d.value))
+
+	text = d.class=="original" ? "Nation Average:" : "Time for you to earn a drink:"
 
 	time = d3.format(".0f")(d.value) + ":" + d3.format(".0f")(seconds) 
 
@@ -143,7 +159,7 @@ function tooltipMouseOver(d){
                 .duration(200)
                 .style("opacity", .95)
                 .attr("id", d.class);
-    tooltip.html("<strong class='tooltip-title'>One standard every:</strong></br> " + time + ' min')
+    tooltip.html("<strong class='tooltip-title'>" + text + "</strong></br> " + time + ' min')
                 
 }
 

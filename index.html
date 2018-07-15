@@ -31,11 +31,19 @@
     <div class="content">
         <div class="visualisation">
 
-            <h3>Minutes of work per standard drink</h3>
+            <h3>Number of minutes for an average worker to earn one standard drink</h3>
             <script src="js/bar-graph.js"></script>
             <div class='control'>
 
-                <input type='text' class='income' id='enter-listener' onfocus="this.value=''" placeholder="Enter your hourly rate...">
+                <div>
+                    <h4>Find out how you compare</h4>
+                    <input type='text' class='income' id='enter-listener' onfocus="this.value=''" placeholder="Enter your hourly rate...">
+                    <div type="submit" class="visualisation-button" onclick="updateGraph(d3.select('input.income').property('value'))">Submit</div>
+
+                    
+                </div>
+                <div><a href="https://www.hpa.org.nz/sites/default/files/Final%20Report%20-%20Trends%20in%20affordibility%20of%20alcohol%20in%20New%20Zealand%20April%202018.pdf" target="_blank" class="source">Source: Trends in affordability of alcohol in New Zealand</a></div>
+                
                 <script>
                     var input = document.getElementById("enter-listener");
                     console.log(input);
@@ -46,7 +54,8 @@
                         }
                     });
                 </script>
-                <div type="submit" class="visualisation-button" onclick="updateGraph(d3.select('input.income').property('value'))">Submit</div>
+
+                
             </div>
         </div>
     </div>

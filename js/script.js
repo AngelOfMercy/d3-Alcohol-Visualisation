@@ -19,6 +19,8 @@ var y = d3.scaleLinear()
 var z = d3.scaleOrdinal()
       .range(["#84BD00", "#63B22C", "#42A859", "#219D85", "#0093B2"]);
 
+
+
 // Define the div for the tooltip
 var tooltip = d3.select("body").append("div") 
     .attr("class", "tooltip")       
