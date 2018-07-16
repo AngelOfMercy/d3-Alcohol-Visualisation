@@ -1,4 +1,4 @@
-var margin = {top: 20, right: 140, bottom: 30, left: 40},
+var margin = {top: 20, right: 140, bottom: 80, left: 80},
     width = $('.visualisation').width() - margin.left - margin.right,
     height = $('.content').height()/2 - margin.top - margin.bottom
 
@@ -30,6 +30,21 @@ var tooltip = d3.select("body").append("div")
 var t = d3.transition()
             .duration(500)
             .ease(d3.easeQuad);
+
+svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2 + margin.left) + " ," + 
+                           (height + margin.top + 50) + ")")
+      .style("text-anchor", "middle")
+      .text("Feeling Isolated?");
+
+svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 + margin.left/4)
+      .attr("x",0 - height/2 - margin.top)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Portion of Population (%)"); 
 
 //Create the initial graph.
 d3.csv("data/anxiety.csv", function(d, i, columns) {

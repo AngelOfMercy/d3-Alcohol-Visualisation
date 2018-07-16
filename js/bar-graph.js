@@ -1,4 +1,4 @@
-var margin = {top:10, right:20, bottom:30, left:50},
+var margin = {top:10, right:20, bottom:30, left:60},
 	width = $('.content').width()/2 - margin.left - margin.right;
 	height = $('.content').height()/2 - margin.top - margin.bottom;
 
@@ -151,7 +151,7 @@ function updateGraph(income=0){
 function tooltipMouseOver(d){
 	seconds = 60*(d.value - Math.floor(d.value))
 
-	text = d.class=="original" ? "Nation Average:" : "Time for you to earn a drink:"
+	text = d.class=="original" ? "National Average:" : "Personal Time:"
 
 	time = d3.format(".0f")(d.value) + ":" + d3.format(".0f")(seconds) 
 
