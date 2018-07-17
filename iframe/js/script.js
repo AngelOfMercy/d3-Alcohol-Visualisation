@@ -1,6 +1,6 @@
 var margin = {top:10, right:20, bottom:30, left:60},
 	width = $('.visualisation').width() - margin.left - margin.right;
-	height = $('.visualisation').height() - margin.top - margin.bottom;
+	height = $('.visualisation').width()*2/3 - margin.top - margin.bottom;
 
 var svg = d3.select(".visualisation").append("svg")
     .attr("width", width + margin.left + margin.right)
