@@ -1,0 +1,126 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+.header{
+	width: 100vw;
+	height:10%;
+	background-color: #84BD00;
+	margin:0px;
+	display: table-row;
+	margin-left: 20px;
+}
+
+.content{
+	height: 100%;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.visualisation{
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 3px;
+    width:50%;
+    text-align: left;
+ 
+}
+html, body{
+    background-color: #282828;\
+    margin:0;
+	padding:0;
+	font-family: Arial, Helvetica, sans-serif;
+	width:100%;
+	height:100%;
+}
+
+body{
+	display: table;
+}
+
+h3 {
+	fill:#282828;
+	letter-spacing: 2px;
+	padding-bottom: -10px;
+}
+
+.header-button{
+	
+	height:100%;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: #84BD00;
+	text-decoration: none;
+	padding:10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	color:white;
+	text-transform: capitalize;
+}
+
+.header-links{
+	padding-left: 15%;
+	height:100%;
+	display: table;
+}
+
+/*
+
+.visualisation-button text{
+	margin: auto;
+    width: 50%;
+    height:50%;
+    //vertical-align: middle;
+}*/
+
+a.header-button:hover, .current-page{
+	box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4);
+}

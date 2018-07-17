@@ -50,8 +50,6 @@ svg.append("text")
 d3.csv("data/anxiety.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
   d.total = t;
-  console.log(columns);
-  console.log(d);
   return d;
 }, function(error, data) {
   if (error) throw error;
@@ -82,9 +80,7 @@ d3.csv("data/anxiety.csv", function(d, i, columns) {
 
 
 function updateGraph(dataset){
-  console.log(dataset);
-
-  
+ 
   //bars.exit().transition(500).attr("height", 0).remove();
 
   d3.select(".dropbtn").text(dataset);
@@ -105,14 +101,10 @@ function updateGraph(dataset){
 
         loadLegend(data.columns.slice(1));
 
-        console.log(keys);
-        console.log(data);
-
         for (i = 0; i < 2; i++){
           for (key in keys){
             key = keys[key]
             data[i][key] = data[i][key]/data[i].total*100;
-            console.log(data[i]);
           };
         };
 
@@ -129,14 +121,13 @@ function updateGraph(dataset){
           .enter().append("rect")
             .attr("x", function(d) { return x(d.data[dataset]); })
             .attr("y", function(d) { 
-              console.log(d);
               return y(d[1]); 
             })
             .attr("height", function(d) { return y(d[0]) - y(d[1]); })
             .attr("width", x.bandwidth())
             .attr("class", "bars")
 
-            .on("mouseover", function(d){mouseover(d, d3.select(this));})
+            .on("mouseover", function(d, t){mouseover(d, d3.select(this), t);})
             .on("mousemove", function(d){mousefollow(d);})
             .on("mouseout", function(d) {mouseout(d, d3.select(this));});
 
@@ -198,7 +189,12 @@ function loadLegend(keys){
 }
 
 
-function mouseover(d, highlight){
+function mouseover(d, highlight, t){
+  highlight.attr('class', 'highlight');
+
+  console.log(d.data);
+  console.log(d3.select(".highlight").data());
+  console.log(t);
   tooltip.transition()
                 .duration(200)
                 .style("opacity", .9)
@@ -206,7 +202,7 @@ function mouseover(d, highlight){
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
 
-  highlight.attr('class', 'highlight');
+  
 }
 
 

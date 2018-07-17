@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,13 +31,16 @@
         <script src="script.js"></script>
     </div>-->
     <div class="content">
-        <div class="visualisation">
-
+        <div id="header">
             <h3>Number of minutes for an average worker to earn one standard drink</h3>
-            <script src="js/bar-graph.js"></script>
-            <div class='control' style="display: table;width:100%;">
+        </div>
 
-                <div style="width:60%; display: table-cell;">
+        <div class="visualisation">
+            <script src="js/bar-graph.js"></script>
+        </div>
+
+        <div class="footer" style="display: table;width:100%;>
+            <div style="width:60%; display: table-cell;">
                     <div>
                         <h4>Find out how you compare</h4>
                         <input type='text' class='income' id='enter-listener' onfocus="this.value=''" placeholder="Enter your hourly rate...">
@@ -60,10 +65,8 @@
                         }
                     });
                 </script>
-
-                
-            </div>
         </div>
+
     </div>
     
   </body>

@@ -1,0 +1,45 @@
+#original {
+	color:#84BD00;
+}
+
+#user {
+	color:#0093B2;
+}
+
+rect.original{
+	fill: #84BD00;
+}
+
+rect.user{
+	fill: #0093B2;
+}
+
+.x-axis line{
+	display:none;
+}
+
+.y-axis path{
+	display:none;
+}
+
+.tick{
+	stroke-dasharray:  2,2;
+}
+
+input.income{
+	width:70%;
+}
+
+h3 {
+	padding-bottom: 16px;
+}
+
+
+.submit {
+	display:inline-block;
+}
+
+.text {
+	display: inline-block;
+	width:80%;
+}
