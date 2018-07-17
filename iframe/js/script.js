@@ -151,7 +151,7 @@ function updateGraph(income=0){
 function tooltipMouseOver(d){
 	seconds = 60*(d.value - Math.floor(d.value))
 
-	text = d.class=="original" ? "National Average:" : "Personal Time:"
+	text = d.class=="original" ? "Average:" : "Personal:"
 
 	time = d3.format(".0f")(d.value) + ":" + d3.format(".0f")(seconds) 
 
