@@ -23,7 +23,7 @@ rect.user{
 }
 
 .tick{
-	stroke-dasharray:  2,2;
+	stroke-dasharray:  1%,2%;
 }
 
 input.income{

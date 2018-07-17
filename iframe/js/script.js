@@ -90,6 +90,13 @@ function updateGraph(income=0){
 	var barsWithData = barContainer.selectAll('g').data(data);
 
 	barsWithData.exit().remove();
+yAxis = svg.select('g')
+				.attr('class', 'y-axis')
+				.transition()
+				.call(d3.axisLeft(y).tickSizeInner(-width).ticks(5).tickSizeOuter(5));
+	svg.selectAll(".tick")
+    .filter(function (d) { return d === 0;  })
+    .remove();
 
 	var bars = barsWithData.
 		enter().append('g')
@@ -106,7 +113,6 @@ function updateGraph(income=0){
 		});
 
 	bars.exit().transition().style('opacity', 0).remove()
-
 
 
       //.attr('class', function(d){return d.class;})
@@ -137,13 +143,7 @@ function updateGraph(income=0){
 
     
 
-	yAxis = svg.select('g')
-				.attr('class', 'y-axis')
-				.transition()
-				.call(d3.axisLeft(y).tickSizeInner(-width).ticks(5).tickSizeOuter(5));
-	svg.selectAll(".tick")
-    .filter(function (d) { return d === 0;  })
-    .remove();
+	
 }
 
 /** TOOL TIP */
