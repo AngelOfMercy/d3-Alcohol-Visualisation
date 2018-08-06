@@ -1,6 +1,10 @@
-var margin = {top:10, right:20, bottom:30, left:60},
+var margin = {top:0, right:20, bottom:30, left:60},
 	width = $('.visualisation').width() - margin.left - margin.right;
-	height = $('.visualisation').width()*2/3 - margin.top - margin.bottom;
+	height = $('.content').height() - ($('.footer').height() + $('.header').height()) - margin.top - margin.bottom;
+
+if (height < 200) {
+	$('.user-control').css({'display': 'none'})
+}
 
 var svg = d3.select(".visualisation").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -27,10 +31,8 @@ var barContainer = svg.append('g');
 var data = null;
 
 function transformData(data){
-	console.log(data);
+
 	temp = []
-
-
 
 	data.forEach(function(d){
 
@@ -56,9 +58,6 @@ d3.json('data/standard_drink_data.json', function(err, json){
 		transformData(data);
 
 		keys = Object.keys(data[0].values);
-
-		console.log("keys")
-		console.log(keys);
 
 		x0.domain(keys);
 
@@ -169,7 +168,6 @@ function tooltipMouseOut(){
 }
 
 function tooltipMouseMove(){
-	console.log('hi')
 
 	mouse_X = d3.event.pageX;
 	mouse_Y = d3.event.pageY;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/iframe_css.css">
+        <link rel="stylesheet" href="css/hpa_default.css">
+        <link rel="stylesheet" href="css/mental_bar_style.css">
+
+        <style>iframe {
+    border:none;
+}</style>
+    </head>
+  
+  <body>
+    <div class="content">
+        <div class="header">
+            <h3>Mental Distress and the relation to feeling Isolated.</h3>
+                            <div class="dropdown">
+                  <button class="dropbtn">Anxiety</button>
+                  <div class="dropdown-content">
+                    <a href="#" onclick="updateGraph('Anxiety')">Anxiety</a>
+                    <a href="#" onclick="updateGraph('Depression')">Depression</a>
+                    <a href="#" onclick="updateGraph('Psychological Distress')">Psychological Distress</a>
+                  </div>
+                </div>
+        </div>
+
+        <div class="visualisation">
+            
+        </div>
+
+        <div class="footer">
+            
+
+            <div style="text-align: right; margin-right: 2vw;">
+                <a href="https://www.hpa.org.nz/sites/default/files/Wellbeing-And-Mental-Distress-Snapshot-2016-Final-FEB2018.PDF" target="_blank" class="source" >Wellbeing and Mental Distress in Aotearoa New Zealand, Snapshot 2016</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/anxiety.js"></script>
+    
+  </body>
+  
+</html>
+
